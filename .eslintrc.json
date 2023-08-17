@@ -25,8 +25,8 @@
       "error",
       {
         "trailingComma": "all",
-        "endOfLine": "lf",
-        "semi": false,
+        "endOfLine": "auto",
+        "semi": true,
         "singleQuote": true,
         "printWidth": 80,
         "tabWidth": 2
