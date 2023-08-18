@@ -3,12 +3,15 @@ const path = require('path');
 
 module.exports = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-postcss',
   ],
+
   staticDirs: ['public'],
+
   babel: async (options) => ({
     ...options,
     plugins: [
@@ -17,6 +20,7 @@ module.exports = {
       '@babel/plugin-proposal-private-property-in-object',
     ],
   }),
+
   webpackFinal: async (config) => {
     config.resolve.plugins = [
       new TsconfigPathsPlugin({
@@ -26,4 +30,9 @@ module.exports = {
 
     return config;
   },
+
+  framework: {
+    name: '@storybook/nextjs',
+    options: {}
+  }
 };
